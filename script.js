@@ -1,21 +1,11 @@
 'use strict';
 
-/*
-console.log(displayMessage);
-displayMessage = 'Correct Number 🎉';
-console.log(displayMessage);
-document.querySelector('.number').textContent = 13;
-document.querySelector('.score').textContent = 20;
-
-document.querySelector('.guess').value = 23;
-console.log(document.querySelector('.guess').value);
-*/
-
 let winningNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 let highscore = 0;
 const displayMessage = function(message){
-    document.querySelector('.message').textContent = message}
+    document.querySelector('.message').textContent = message;
+}
 
 
 document.querySelector('.check').addEventListener('click', function(){
@@ -25,12 +15,18 @@ if(!guess){
     displayMessage = 'No number! ⛔';
 } else if(guess > 20){
     if(score > 1) {
-        displayMessage('Your Guess is above allowed range! 📈');
+        displayMessage('Way above range! 📈');
         score--;
         document.querySelector('.score').textContent = score;
     } else {
         displayMessage('Game over! You lost the game :(');
         document.querySelector('.score').textContent = 0;
+
+        document.querySelector('.number').textContent = winningNumber;
+        document.querySelector('.number').style.color = '#000';
+        document.querySelector('.page').style.backgroundColor = 'red';
+        document.querySelector('.game-title-number').style.width = '200px';
+        document.querySelector('.game-title-number').style.backgroundColor = '#eee';
     }
     if(score > highscore){
         highscore = score;
@@ -38,12 +34,18 @@ if(!guess){
     }
 } else if(guess < 0){
     if(score > 1) {
-        displayMessage('Your Guess is below allowed range! 📈');
+        displayMessage('Below allowed range! 📈');
         score--;
         document.querySelector('.score').textContent = score;
     } else {
         displayMessage('Game over! You lost the game :(');
         document.querySelector('.score').textContent = 0;
+
+        document.querySelector('.number').textContent = winningNumber;
+        document.querySelector('.number').style.color = '#000';
+        document.querySelector('.page').style.backgroundColor = 'red';
+        document.querySelector('.game-title-number').style.width = '200px';
+        document.querySelector('.game-title-number').style.backgroundColor = '#eee';
     }
     if(score > highscore){
         highscore = score;
@@ -53,8 +55,11 @@ if(!guess){
     if(score > highscore){
         highscore = score;
         document.querySelector('.highscore').textContent = highscore;
+    } else {
+        highscore = highscore;
+        document.querySelector('.highscore').textContent = highscore;
     }
-    displayMessage('Correct Number! You won the game :) 🎉');
+    displayMessage('Hoooray! You won :) 🎉');
     
     document.querySelector('.number').textContent = winningNumber;
     document.querySelector('.score').textContent = score;
@@ -71,6 +76,14 @@ if(!guess){
     } else {
         displayMessage('Game over! You lost the game :(');
         document.querySelector('.score').textContent = 0;
+        
+        document.querySelector('.number').textContent = winningNumber;
+        document.querySelector('.number').style.color = '#000';
+        document.querySelector('.game-title-number').style.width = '200px';
+        document.querySelector('.page').style.backgroundColor = '#60b347';
+        document.querySelector('.game-title-number').style.backgroundColor = '#eee';
+        
+
     }
     if(score > highscore){
         highscore = score;
@@ -81,11 +94,14 @@ if(!guess){
 
 document.querySelector('.again').addEventListener('click', function(){
     winningNumber = Math.trunc(Math.random() * 20) + 1;
+    score = 20;
+    highscore = highscore;
 
     displayMessage('Start guessing..');
     document.querySelector('.page').style.backgroundColor = 'rgb(131, 130, 128)';
     document.querySelector('.game-title-number').style.width = '100px';
     document.querySelector('.number').textContent = '?';
+    document.querySelector('.number').value = winningNumber;
     document.querySelector('.guess').value = '';
     document.querySelector('.score').textContent = 20;
     document.querySelector('.highscore').textContent = highscore;
