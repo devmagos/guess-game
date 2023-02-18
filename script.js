@@ -22,7 +22,6 @@ if(!guess){
         displayMessage('Game over! You lost the game :(');
         document.querySelector('.score').textContent = 0;
 
-        document.querySelector('.number').textContent = winningNumber;
         document.querySelector('.number').style.color = '#000';
         document.querySelector('.page').style.backgroundColor = 'red';
         document.querySelector('.game-title-number').style.width = '200px';
@@ -41,7 +40,6 @@ if(!guess){
         displayMessage('Game over! You lost the game :(');
         document.querySelector('.score').textContent = 0;
 
-        document.querySelector('.number').textContent = winningNumber;
         document.querySelector('.number').style.color = '#000';
         document.querySelector('.page').style.backgroundColor = 'red';
         document.querySelector('.game-title-number').style.width = '200px';
@@ -77,7 +75,6 @@ if(!guess){
         displayMessage('Game over! You lost the game :(');
         document.querySelector('.score').textContent = 0;
         
-        document.querySelector('.number').textContent = winningNumber;
         document.querySelector('.number').style.color = '#000';
         document.querySelector('.game-title-number').style.width = '200px';
         document.querySelector('.page').style.backgroundColor = '#60b347';
@@ -97,7 +94,7 @@ document.querySelector('.again').addEventListener('click', function(){
     score = 20;
     highscore = highscore;
 
-    displayMessage('Start guessing..');
+    displayMessage('Start guessing...');
     document.querySelector('.page').style.backgroundColor = 'rgb(131, 130, 128)';
     document.querySelector('.game-title-number').style.width = '100px';
     document.querySelector('.number').textContent = '?';
