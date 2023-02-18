@@ -12,7 +12,7 @@ document.querySelector('.check').addEventListener('click', function(){
 const guess = Number(document.querySelector('.guess').value);
 
 if(!guess){
-    displayMessage = 'No number! ⛔';
+    displayMessage('No number! ⛔');
 } else if(guess > 20){
     if(score > 1) {
         displayMessage('Way above range! 📈');
