@@ -3,8 +3,10 @@
 let winningNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 let highscore = 0;
+// #60b347 - win green
 const displayMessage = function(message){
     document.querySelector('.message').textContent = message;
+    document.querySelector('.message').style.color = 'red';
 }
 
 
@@ -17,11 +19,12 @@ if(!guess){
     if(score > 1) {
         displayMessage('Way above range! 📈');
         score--;
-        document.querySelector('.score').textContent = score;
+    document.querySelector('.score').textContent = score;
     } else {
         displayMessage('Game over! You lost the game :(');
         document.querySelector('.score').textContent = 0;
 
+        document.querySelector('.message').style.color = '#fff';
         document.querySelector('.number').style.color = '#000';
         document.querySelector('.page').style.backgroundColor = 'red';
         document.querySelector('.game-title-number').style.width = '200px';
@@ -35,11 +38,12 @@ if(!guess){
     if(score > 1) {
         displayMessage('Below allowed range! 📈');
         score--;
-        document.querySelector('.score').textContent = score;
+    document.querySelector('.score').textContent = score;
     } else {
         displayMessage('Game over! You lost the game :(');
         document.querySelector('.score').textContent = 0;
 
+        document.querySelector('.message').style.color = '#fff';
         document.querySelector('.number').style.color = '#000';
         document.querySelector('.page').style.backgroundColor = 'red';
         document.querySelector('.game-title-number').style.width = '200px';
@@ -59,6 +63,10 @@ if(!guess){
     }
     displayMessage('Hoooray! You won :) 🎉');
     
+    document.querySelector('.message').style.color = '#fff';
+    document.querySelector('.score').style.color = '#fff';
+    document.querySelector('.highscore').style.color = '#fff';
+    document.querySelector('header').style.borderBottom = '6px dashed #fff';
     document.querySelector('.number').textContent = winningNumber;
     document.querySelector('.score').textContent = score;
     document.querySelector('.highscore').textContent = highscore + '🎉';
@@ -75,6 +83,7 @@ if(!guess){
         displayMessage('Game over! You lost the game :(');
         document.querySelector('.score').textContent = 0;
         
+        document.querySelector('.message').style.color = '#fff';
         document.querySelector('.number').style.color = '#000';
         document.querySelector('.game-title-number').style.width = '200px';
         document.querySelector('.page').style.backgroundColor = '#60b347';
@@ -96,12 +105,16 @@ document.querySelector('.again').addEventListener('click', function(){
 
     displayMessage('Start guessing...');
     document.querySelector('.page').style.backgroundColor = 'rgb(131, 130, 128)';
+    document.querySelector('.message').style.color = '#000';
+    document.querySelector('.score').style.color = '#000';
+    document.querySelector('.highscore').style.color = '#000';
     document.querySelector('.game-title-number').style.width = '100px';
     document.querySelector('.number').textContent = '?';
     document.querySelector('.number').value = winningNumber;
     document.querySelector('.guess').value = '';
     document.querySelector('.score').textContent = 20;
     document.querySelector('.highscore').textContent = highscore;
+    
     
 
     if(score > highscore){
