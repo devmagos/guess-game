@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    color: #eee;
+}
+
+.page {
+    width: 60%;
+    margin: 40px auto;
+    background-color: rgb(131, 130, 128);
+}
+
+header {
+    position: relative;
+    height: 40vh;
+    padding: 10px;
+    border-bottom: 6px dashed rgb(155, 152, 152);
+}
+
+main {
+    height: 50vh;
+    color: #eee;
+    display: flex;
+    justify-content: space-around;
+}
+
+.left {
+    width: 82rem;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+}
+
+.right {
+    width: 52rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: larger;
+}
+
+.right p {
+    margin: 8px;
+    font-size: larger;
+}
+.again{
+    padding: 10px;
+}
+
+.check {
+    margin: 8px;
+    padding: 10px;
+}
+
+.guess {
+    padding: 10px;
+    border: 3px solid rgb(155, 152, 152);
+    background-color: #eee;
+}
+
+div .game-title {
+    margin: 2% 35%;
+    width: 30%;
+    padding: 8px;
+    font-size: x-large;
+}
+
+.game-title-number  {
+    background-color: lightgray;
+    width: 100px;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+}
+
+.number {
+    font-size: 8rem;
+    font-weight: bolder;
+}
+
+.number-input {
+    margin: 10px 50%;
+    font-size: 8rem;
+    font-weight: bolder;
+}
+
+.top-section {
+    font-size: larger;
+    display: flex;
+    justify-content: space-between;
+}
