@@ -104,7 +104,8 @@ document.querySelector('.again').addEventListener('click', function(){
     highscore = highscore;
 
     displayMessage('Start guessing...');
-    document.querySelector('.page').style.backgroundColor = 'rgb(131, 130, 128)';
+    document.querySelector('.page').style.backgroundColor = 'skyblue';
+    document.querySelector('body').style.backgroundColor = 'lightgrey';
     document.querySelector('.message').style.color = '#000';
     document.querySelector('.score').style.color = '#000';
     document.querySelector('.highscore').style.color = '#000';
